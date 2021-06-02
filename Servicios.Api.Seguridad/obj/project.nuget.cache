@@ -1,9 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "63SJgQe9hoaS0ERa4fKDLuR7yFNqIP3lW/n3WLOY0TxipbXTGdjUmMUXi9YpEQMVvkwaPeou0j1nPTkVikjTTw==",
+  "dgSpecHash": "LIVc3slAkubc9WMOtncQQ0W8XhMNWBbBs2uUU1ulgAtqiF6Nw6FA4UAaKqKpdaHcRAPoH+CYPjaxDGquWYVabA==",
   "success": true,
   "projectFilePath": "C:\\Users\\Luis Angel\\Documents\\proyectos\\MicroserviciosDotNet\\Microservices\\Servicios.Api.Seguridad\\Servicios.Api.Seguridad.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\Luis Angel\\.nuget\\packages\\mediatr\\9.0.0\\mediatr.9.0.0.nupkg.sha512",
+    "C:\\Users\\Luis Angel\\.nuget\\packages\\mediatr.extensions.microsoft.dependencyinjection\\9.0.0\\mediatr.extensions.microsoft.dependencyinjection.9.0.0.nupkg.sha512",
     "C:\\Users\\Luis Angel\\.nuget\\packages\\microsoft.aspnetcore.cryptography.internal\\3.1.9\\microsoft.aspnetcore.cryptography.internal.3.1.9.nupkg.sha512",
     "C:\\Users\\Luis Angel\\.nuget\\packages\\microsoft.aspnetcore.cryptography.keyderivation\\3.1.9\\microsoft.aspnetcore.cryptography.keyderivation.3.1.9.nupkg.sha512",
     "C:\\Users\\Luis Angel\\.nuget\\packages\\microsoft.aspnetcore.identity.entityframeworkcore\\3.1.9\\microsoft.aspnetcore.identity.entityframeworkcore.3.1.9.nupkg.sha512",
