@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "LIVc3slAkubc9WMOtncQQ0W8XhMNWBbBs2uUU1ulgAtqiF6Nw6FA4UAaKqKpdaHcRAPoH+CYPjaxDGquWYVabA==",
+  "dgSpecHash": "OROOZVQcGUyATD/2ZrNS5WLM4SxJjvJMiPChIxxT7df5XN8/3aDzHCc6DDWSllPwjrD/H4cXsx4/YDQyLu22jQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Luis Angel\\Documents\\proyectos\\MicroserviciosDotNet\\Microservices\\Servicios.Api.Seguridad\\Servicios.Api.Seguridad.csproj",
+  "projectFilePath": "C:\\Users\\Luis Angel\\Documents\\proyectos\\MicroserviciosDotNetCst\\Microservices\\Servicios.Api.Seguridad\\Servicios.Api.Seguridad.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Luis Angel\\.nuget\\packages\\mediatr\\9.0.0\\mediatr.9.0.0.nupkg.sha512",
     "C:\\Users\\Luis Angel\\.nuget\\packages\\mediatr.extensions.microsoft.dependencyinjection\\9.0.0\\mediatr.extensions.microsoft.dependencyinjection.9.0.0.nupkg.sha512",

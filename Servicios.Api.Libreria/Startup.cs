@@ -1,20 +1,16 @@
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
-using Servicios.Api.Libreria.Core;
-using Servicios.Api.Libreria.Core.ContextMongoDB;
-using Servicios.Api.Libreria.Repository;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+using Servicios.Api.Cst.Aplication;
+using Servicios.Api.Cst.Aplication.Implementacion;
+using Servicios.Api.Cst.Aplication.Interfaces;
+using Servicios.Api.Cst.Core;
+using Servicios.Api.Cst.Repository;
 
-namespace Servicios.Api.Libreria
+namespace Servicios.Api.Cst
 {
     public class Startup
     {
@@ -40,9 +36,9 @@ namespace Servicios.Api.Libreria
             // Se implementa patrón singletón.
             services.AddSingleton<MongoSettings>();
 
-            // Se implementa inyección de dependencias para autores.
-            services.AddTransient<IAutorContext, AutorContext>();
-            services.AddTransient<IAutorRepository, AutorRepository>();
+            // Se implementa inyección de dependencias.
+            services.AddTransient<IDepartamentoAplication, DepartamentoAplication>();
+            services.AddTransient<IMunicipioAplication, MunicipioAplication>();
 
             // Se implementa inyección de dependencias para mongo con documentos genericos.
             services.AddScoped(typeof(IMongoRepository<>), typeof(MongoRepository<>));
@@ -51,7 +47,7 @@ namespace Servicios.Api.Libreria
             services.AddControllers();
             services.AddSwaggerGen(c =>
             {
-                c.SwaggerDoc("v1", new OpenApiInfo { Title = "Servicios.Api.Libreria", Version = "v1" });
+                c.SwaggerDoc("v1", new OpenApiInfo { Title = "Servicios.Api.Cst", Version = "v1" });
             });
 
             // Se establece politica de Cors.
@@ -71,7 +67,7 @@ namespace Servicios.Api.Libreria
             {
                 app.UseDeveloperExceptionPage();
                 app.UseSwagger();
-                app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "Servicios.Api.Libreria v1"));
+                app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "Servicios.Api.Cst v1"));
             }
 
             app.UseRouting();

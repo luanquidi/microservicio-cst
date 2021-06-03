@@ -3,11 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.31112.23
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Servicios.Api.Libreria", "Servicios.Api.Libreria\Servicios.Api.Libreria.csproj", "{6E0099BD-10FD-4583-8BDB-9A935CEFBDDD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Servicios.Api.Cst", "Servicios.Api.Libreria\Servicios.Api.Cst.csproj", "{6E0099BD-10FD-4583-8BDB-9A935CEFBDDD}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1.Servicios", "1.Servicios", "{F196AB3A-6769-4592-A305-945654CE978C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Servicios.Api.Seguridad", "Servicios.Api.Seguridad\Servicios.Api.Seguridad.csproj", "{13286EFF-2391-4019-906E-ED551EF5E6B0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Servicios.Api.Seguridad", "Servicios.Api.Seguridad\Servicios.Api.Seguridad.csproj", "{13286EFF-2391-4019-906E-ED551EF5E6B0}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "2.Seguridad", "2.Seguridad", "{CE0CD2D6-7456-46D2-AF0E-3FB80CEBE7BB}"
 EndProject

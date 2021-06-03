@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "USvIUZL4K79y1l1o/jgmfeZd6Uj3cmSCDzfnV8o8yLtkK92CcvjVhHJ+VZsjDKQ8rPMf40nUtK+/yC0E0U2gTA==",
+  "dgSpecHash": "/mECo1t18XsdFK0Yfv8LJo3N4U/AanCJnGIrbP5ugKKkNyoqLBjBCP9T7Jsm61ZAOLR+kAikLgqfrh+yr7XQJw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Luis Angel\\Documents\\proyectos\\MicroserviciosDotNet\\Microservices\\Servicios.Api.Libreria\\Servicios.Api.Libreria.csproj",
+  "projectFilePath": "C:\\Users\\Luis Angel\\Documents\\proyectos\\MicroserviciosDotNetCst\\Microservices\\Servicios.Api.Libreria\\Servicios.Api.Cst.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Luis Angel\\.nuget\\packages\\dnsclient\\1.3.1\\dnsclient.1.3.1.nupkg.sha512",
     "C:\\Users\\Luis Angel\\.nuget\\packages\\microsoft.extensions.apidescription.server\\3.0.0\\microsoft.extensions.apidescription.server.3.0.0.nupkg.sha512",

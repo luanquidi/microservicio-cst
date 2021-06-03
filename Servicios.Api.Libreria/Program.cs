@@ -7,7 +7,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace Servicios.Api.Libreria
+namespace Servicios.Api.Cst
 {
     public class Program
     {
