@@ -51,6 +51,11 @@ namespace Servicios.Api.Cst.Controllers
         [HttpPost]
         public async Task<IActionResult> Post(SitioTuristicoEntity sitioTuristico)
         {
+            if (string.IsNullOrEmpty(sitioTuristico.Nit) || string.IsNullOrEmpty(sitioTuristico.Nombre) || string.IsNullOrEmpty(sitioTuristico.Informacion) || string.IsNullOrEmpty(sitioTuristico.Direccion) || sitioTuristico.Municipio is null || string.IsNullOrEmpty(sitioTuristico.ActividadPrincipal)
+                || string.IsNullOrEmpty(sitioTuristico.Contacto) || string.IsNullOrEmpty(sitioTuristico.Correo) || string.IsNullOrEmpty(sitioTuristico.Telefono) || string.IsNullOrEmpty(sitioTuristico.Zona) || string.IsNullOrEmpty(sitioTuristico.NombreRepresentanteLegal) || string.IsNullOrEmpty(sitioTuristico.NumeroRegistro))
+            {
+                return BadRequest("Todos los campos son obligatoríos.");
+            }
             var respuesta = await _sitioTuristicoAplication.RegistrarSitioTuristicoAsync(sitioTuristico);
             return Ok(respuesta);
         }
@@ -62,6 +67,11 @@ namespace Servicios.Api.Cst.Controllers
         [HttpPut("{id}")]
         public async Task<IActionResult> Put(string id, SitioTuristicoEntity sitioTuristico)
         {
+            if (string.IsNullOrEmpty(sitioTuristico.Nit) || string.IsNullOrEmpty(sitioTuristico.Nombre) || string.IsNullOrEmpty(sitioTuristico.Informacion) || string.IsNullOrEmpty(sitioTuristico.Direccion) || sitioTuristico.Municipio is null || string.IsNullOrEmpty(sitioTuristico.ActividadPrincipal)
+                || string.IsNullOrEmpty(sitioTuristico.Contacto) || string.IsNullOrEmpty(sitioTuristico.Correo) || string.IsNullOrEmpty(sitioTuristico.Telefono) || string.IsNullOrEmpty(sitioTuristico.Zona) || string.IsNullOrEmpty(sitioTuristico.NombreRepresentanteLegal) || string.IsNullOrEmpty(sitioTuristico.NumeroRegistro))
+            {
+                return BadRequest("Todos los campos son obligatoríos.");
+            }
             var respuesta = await _sitioTuristicoAplication.ActualizarSitioTuristicoAsync(id, sitioTuristico);
             return Ok(respuesta);
         }

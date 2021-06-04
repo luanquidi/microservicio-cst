@@ -41,6 +41,10 @@ namespace Servicios.Api.Cst.Controllers
         [HttpPost]
         public async Task<IActionResult> Post(RestauranteEntity restaurante)
         {
+            if (string.IsNullOrEmpty(restaurante.Nit) || string.IsNullOrEmpty(restaurante.Nombre) || string.IsNullOrEmpty(restaurante.Informacion) || string.IsNullOrEmpty(restaurante.Direccion) || restaurante.Municipio is null || restaurante.TipoRestaurante is null)
+            {
+                return BadRequest("Todos los campos son obligatoríos.");
+            }
             var respuesta = await _restauranteAplication.RegistrarRestauranteAsync(restaurante);
             return Ok(respuesta);
         }
@@ -49,6 +53,10 @@ namespace Servicios.Api.Cst.Controllers
         [HttpPut("{id}")]
         public async Task<IActionResult> Put(string id, RestauranteEntity restaurante)
         {
+            if (string.IsNullOrEmpty(restaurante.Nit) || string.IsNullOrEmpty(restaurante.Nombre) || string.IsNullOrEmpty(restaurante.Informacion) || string.IsNullOrEmpty(restaurante.Direccion) || restaurante.Municipio is null || restaurante.TipoRestaurante is null)
+            {
+                return BadRequest("Todos los campos son obligatoríos.");
+            }
             var respuesta = await _restauranteAplication.ActualizarRestauranteAsync(id, restaurante);
             return Ok(respuesta);
         }

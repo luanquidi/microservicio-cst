@@ -41,6 +41,10 @@ namespace Servicios.Api.Cst.Controllers
         [HttpPost]
         public async Task<IActionResult> Post(TipoRestauranteEntity tipoRestaurante)
         {
+            if (string.IsNullOrEmpty(tipoRestaurante.Nombre))
+            {
+                return BadRequest("Todos los campos son obligatoríos.");
+            }
             var respuesta = await _tipoRestauranteAplication.RegistrarTipoRestauranteAsync(tipoRestaurante);
             return Ok(respuesta);
         }
@@ -49,6 +53,10 @@ namespace Servicios.Api.Cst.Controllers
         [HttpPut("{id}")]
         public async Task<IActionResult> Put(string id, TipoRestauranteEntity tipoRestaurante)
         {
+            if (string.IsNullOrEmpty(tipoRestaurante.Nombre))
+            {
+                return BadRequest("Todos los campos son obligatoríos.");
+            }
             var respuesta = await _tipoRestauranteAplication.ActualizarTipoRestauranteAsync(id, tipoRestaurante);
             return Ok(respuesta);
         }

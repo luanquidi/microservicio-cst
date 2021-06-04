@@ -24,8 +24,6 @@ namespace Servicios.Api.Cst.Core.Entities
 
         [BsonElement("informacion")]
         public string Informacion { get; set; }
-
-        [BsonElement("estado")]
-        public string Estado { get; set; }
+        
     }
 }

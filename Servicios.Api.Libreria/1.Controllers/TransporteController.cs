@@ -36,6 +36,10 @@ namespace Servicios.Api.Controllers
         [HttpPost]
         public async Task<IActionResult> Post(TransporteEntity transporte)
         {
+            if (string.IsNullOrEmpty(transporte.Nit) || string.IsNullOrEmpty(transporte.Nombre) || string.IsNullOrEmpty(transporte.Informacion) || string.IsNullOrEmpty(transporte.Direccion) || transporte.Municipio is null)
+            {
+                return BadRequest("Todos los campos son obligatoríos.");
+            }
             var respuesta = await _transporte.RegistrarTransporteAsync(transporte);
             return Ok(respuesta);
         }
@@ -43,6 +47,10 @@ namespace Servicios.Api.Controllers
         [HttpPut("{id}")]
         public async Task<IActionResult> Put(string id, TransporteEntity transporte)
         {
+            if (string.IsNullOrEmpty(transporte.Nit) || string.IsNullOrEmpty(transporte.Nombre) || string.IsNullOrEmpty(transporte.Informacion) || string.IsNullOrEmpty(transporte.Direccion) || transporte.Municipio is null)
+            {
+                return BadRequest("Todos los campos son obligatoríos.");
+            }
             var respuesta = await _transporte.ActualizarTransporteAsync(id,transporte);
             return Ok(respuesta);
         }
