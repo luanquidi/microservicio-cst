@@ -1,9 +1,4 @@
 ﻿using MongoDB.Bson.Serialization.Attributes;
-using Servicios.Api.Cst.Core.Entities;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace Servicios.Api.Cst.Core.Entities
 {
@@ -12,7 +7,7 @@ namespace Servicios.Api.Cst.Core.Entities
     public class SitioTuristicoEntity : Document
     {
         [BsonElement("nit")]
-        public string NIT { get; set; }
+        public string Nit { get; set; }
 
         [BsonElement("nombre")]
         public string Nombre { get; set; }
@@ -53,7 +48,5 @@ namespace Servicios.Api.Cst.Core.Entities
         [BsonElement("informacion")]
         public string Informacion { get; set; }
 
-        [BsonElement("estado")]
-        public string Estado { get; set; }
     }
 }

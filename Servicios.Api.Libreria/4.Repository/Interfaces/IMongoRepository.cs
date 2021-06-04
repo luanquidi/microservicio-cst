@@ -10,6 +10,7 @@ namespace Servicios.Api.Cst.Repository
         Task<TDocument> GetById(string id);
         Task InsertDocument(TDocument document);
         Task UpdateDocument(TDocument document);
+        //Task HideDocument(TDocument document);
         Task DeleteById(string id);
     }
 }

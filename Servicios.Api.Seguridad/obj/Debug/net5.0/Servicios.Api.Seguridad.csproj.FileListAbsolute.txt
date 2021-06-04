@@ -115,3 +115,4 @@ C:\Users\Luis Angel\Documents\proyectos\MicroserviciosDotNetCst\Microservices\Se
 C:\Users\Luis Angel\Documents\proyectos\MicroserviciosDotNetCst\Microservices\Servicios.Api.Seguridad\obj\Debug\net5.0\ref\Servicios.Api.Seguridad.dll
 C:\Users\Luis Angel\Documents\proyectos\MicroserviciosDotNetCst\Microservices\Servicios.Api.Seguridad\obj\Debug\net5.0\Servicios.Api.Seguridad.pdb
 C:\Users\Luis Angel\Documents\proyectos\MicroserviciosDotNetCst\Microservices\Servicios.Api.Seguridad\obj\Debug\net5.0\Servicios.Api.Seguridad.genruntimeconfig.cache
+C:\Users\Luis Angel\Documents\proyectos\MicroserviciosDotNetCst\Microservices\Servicios.Api.Seguridad\obj\Debug\net5.0\Servicios.Api.Seguridad.csprojAssemblyReference.cache

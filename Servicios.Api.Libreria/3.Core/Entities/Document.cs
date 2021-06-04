@@ -11,5 +11,9 @@ namespace Servicios.Api.Cst.Core.Entities
         public string Id { get; set; }
 
         public DateTime CreatedDate => DateTime.Now;
+
+        [BsonElement("estado")]
+        public int Estado => 1;
+
     }
 }

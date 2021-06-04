@@ -43,6 +43,7 @@ namespace Servicios.Api.Cst
             services.AddTransient<IRestauranteAplication, RestauranteAplication>();
             services.AddTransient<ITipoRestauranteAplication, TipoRestauranteAplication>();
             services.AddTransient<ITransporteAplication, TransporteAplication>();
+            services.AddTransient<IHospedajeAplication, HospedajeAplication>();
 
             // Se implementa inyección de dependencias para mongo con documentos genericos.
             services.AddScoped(typeof(IMongoRepository<>), typeof(MongoRepository<>));

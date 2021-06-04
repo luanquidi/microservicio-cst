@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Servicios.Api.Cst.Aplication.Interfaces;
 using Servicios.Api.Cst.Core.Entities;
+using System;
 using System.Threading.Tasks;
 
 namespace Servicios.Api.Cst.Controllers
@@ -48,6 +49,12 @@ namespace Servicios.Api.Cst.Controllers
         [HttpPost]
         public async Task<IActionResult> Post(MunicipioEntity municipio)
         {
+            // Validacion campos vacíos
+            if (string.IsNullOrEmpty(municipio.Nombre) || string.IsNullOrEmpty(municipio.Historia) || municipio.Departamento is null || string.IsNullOrEmpty(municipio.Cultura) || municipio.FechaFundacion.Equals(DateTime.MinValue))
+            {
+                return BadRequest("Todos los campos son obligatoríos.");
+            }
+
             var respuesta = await _municipioAplication.RegistrarMunicipioAsync(municipio);
             return Ok(respuesta);
         }
@@ -59,6 +66,12 @@ namespace Servicios.Api.Cst.Controllers
         [HttpPut("{id}")]
         public async Task<IActionResult> Put(string id, MunicipioEntity municipio)
         {
+            // Validacion campos vacíos
+            if (string.IsNullOrEmpty(id) || string.IsNullOrEmpty(municipio.Nombre) || string.IsNullOrEmpty(municipio.Historia) || municipio.Departamento is null || string.IsNullOrEmpty(municipio.Cultura) || municipio.FechaFundacion.Equals(DateTime.MinValue))
+            {
+                return BadRequest("Todos los campos son obligatoríos.");
+            }
+
             var respuesta = await _municipioAplication.ActualizarMunicipioAsync(id, municipio);
             return Ok(respuesta);
         }

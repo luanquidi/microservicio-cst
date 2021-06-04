@@ -7,6 +7,7 @@ namespace Servicios.Api.Cst.Core.Entities
     [BsonCollection("Departamento")]
     public class DepartamentoEntity : Document
     {
+       
         [BsonElement("nombre")]
         public string Nombre { get; set; }
 
@@ -16,5 +17,6 @@ namespace Servicios.Api.Cst.Core.Entities
         [BsonElement("fechaFundacion")]
         public DateTime? FechaFundacion { get; set; }
 
+        
     }
 }

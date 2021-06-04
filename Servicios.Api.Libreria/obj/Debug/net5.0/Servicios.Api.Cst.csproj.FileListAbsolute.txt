@@ -73,3 +73,4 @@ C:\MicroserviceJuan\New CST\Servicios.Api.Libreria\obj\Debug\net5.0\scopedcss\bu
 C:\MicroserviceJuan\New CST\Servicios.Api.Libreria\obj\Debug\net5.0\Servicios.Api.Cst.RazorTargetAssemblyInfo.cache
 C:\MicroserviceJuan\New CST\Servicios.Api.Libreria\obj\Debug\net5.0\Servicios.Api.Cst.csproj.CopyComplete
 C:\MicroserviceJuan\New CST\Servicios.Api.Libreria\obj\Debug\net5.0\Servicios.Api.Cst.genruntimeconfig.cache
+C:\Users\Luis Angel\Documents\proyectos\MicroserviciosDotNetCst\Microservices\Servicios.Api.Libreria\obj\Debug\net5.0\Servicios.Api.Cst.csprojAssemblyReference.cache

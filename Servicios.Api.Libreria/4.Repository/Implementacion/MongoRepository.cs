@@ -1,13 +1,11 @@
 ﻿
 using Microsoft.Extensions.Options;
-using MongoDB.Bson;
 using MongoDB.Driver;
 using Servicios.Api.Cst.Core;
 using Servicios.Api.Cst.Core.Entities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Linq.Expressions;
 using System.Threading.Tasks;
 
 namespace Servicios.Api.Cst.Repository
@@ -33,7 +31,9 @@ namespace Servicios.Api.Cst.Repository
         /// <returns></returns>
         public async Task<IEnumerable<TDocument>> GetAll()
         {
-            return await _collection.Find(p => true).ToListAsync();
+            var filter = Builders<TDocument>.Filter.Eq(x => x.Estado, 1);
+            return await _collection.Find(filter).ToListAsync();
+            //return await _collection.Find(p => true).ToListAsync();
         }
 
         /// <summary>
@@ -69,14 +69,15 @@ namespace Servicios.Api.Cst.Repository
         }
 
         /// <summary>
-        /// Método para eliminar un documento por id.
+        /// Método para obtener y ocultar un documento.
         /// </summary>
-        /// <param name="id"></param>
+        /// <param name="document"></param>
         /// <returns></returns>
         public async Task DeleteById(string id)
         {
             var filter = Builders<TDocument>.Filter.Eq(doc => doc.Id, id);
-            await _collection.FindOneAndDeleteAsync(filter);
+            var update = Builders<TDocument>.Update.Set("estado", 0);
+            await _collection.UpdateOneAsync(filter, update);
         }
 
 

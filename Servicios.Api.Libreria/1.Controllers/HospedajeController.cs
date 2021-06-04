@@ -1,22 +1,21 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Servicios.Api.Cst.Aplication.Interfaces;
 using Servicios.Api.Cst.Core.Entities;
-using System;
 using System.Threading.Tasks;
 
 namespace Servicios.Api.Cst.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class DepartamentoController : ControllerBase
+    public class HospedajeController : ControllerBase
     {
         // Inyección de dependencias.
-        private readonly IDepartamentoAplication _departamentoAplication;
+        private readonly IHospedajeAplication _hospedajeAplication;
 
         // Método constructor.
-        public DepartamentoController(IDepartamentoAplication departamentoAplication)
+        public HospedajeController(IHospedajeAplication hospedajeAplication)
         {
-            _departamentoAplication = departamentoAplication;
+            _hospedajeAplication = hospedajeAplication;
         }
 
         #region Métodos públicos
@@ -27,7 +26,7 @@ namespace Servicios.Api.Cst.Controllers
         [HttpGet]
         public async Task<IActionResult> Get()
         {
-            var respuesta = await _departamentoAplication.ObtenerDepartamentosAsync();
+            var respuesta = await _hospedajeAplication.ObtenerHospedajesAsync();
             return Ok(respuesta);
         }
 
@@ -38,7 +37,7 @@ namespace Servicios.Api.Cst.Controllers
         [HttpGet("{id}")]
         public async Task<IActionResult> GetById(string id)
         {
-            var respuesta = await _departamentoAplication.ObtenerDepartamentoAsync(id);
+            var respuesta = await _hospedajeAplication.ObtenerHospedajeAsync(id);
             return Ok(respuesta);
         }
 
@@ -47,13 +46,13 @@ namespace Servicios.Api.Cst.Controllers
         /// </summary>
         /// <returns></returns>
         [HttpPost]
-        public async Task<IActionResult> Post(DepartamentoEntity departamento)
+        public async Task<IActionResult> Post(HospedajeEntity hospedaje)
         {
-            if (string.IsNullOrEmpty(departamento.Nombre) || string.IsNullOrEmpty(departamento.Historia) || departamento.FechaFundacion.Equals(DateTime.MinValue) || departamento.FechaFundacion == null)
+            if(string.IsNullOrEmpty(hospedaje.Nombre) || string.IsNullOrEmpty(hospedaje.Direccion) || string.IsNullOrEmpty(hospedaje.Nit) || string.IsNullOrEmpty(hospedaje.Informacion))
             {
                 return BadRequest("Todos los campos son obligatoríos.");
             }
-            var respuesta = await _departamentoAplication.RegistrarDepartamentoAsync(departamento);
+            var respuesta = await _hospedajeAplication.RegistrarHospedajeAsync(hospedaje);
             return Ok(respuesta);
         }
 
@@ -62,13 +61,13 @@ namespace Servicios.Api.Cst.Controllers
         /// </summary>
         /// <returns></returns>
         [HttpPut("{id}")]
-        public async Task<IActionResult> Put(string id, DepartamentoEntity departamento)
+        public async Task<IActionResult> Put(string id, HospedajeEntity hospedaje)
         {
-            if (string.IsNullOrEmpty(id) || string.IsNullOrEmpty(departamento.Nombre) || string.IsNullOrEmpty(departamento.Historia))
+            if (string.IsNullOrEmpty(id) || string.IsNullOrEmpty(hospedaje.Nombre) || string.IsNullOrEmpty(hospedaje.Direccion) || string.IsNullOrEmpty(hospedaje.Nit) || string.IsNullOrEmpty(hospedaje.Informacion))
             {
                 return BadRequest("Todos los campos son obligatoríos.");
             }
-            var respuesta = await _departamentoAplication.ActualizarDepartamentoAsync(id, departamento);
+            var respuesta = await _hospedajeAplication.ActualizarHospedajeAsync(id, hospedaje);
             return Ok(respuesta);
         }
 
@@ -79,7 +78,7 @@ namespace Servicios.Api.Cst.Controllers
         [HttpDelete("{id}")]
         public async Task<IActionResult> Delete(string id)
         {
-            var respuesta = await _departamentoAplication.EliminarDepartamentoAsync(id);
+            var respuesta = await _hospedajeAplication.EliminarHospedajeAsync(id);
             return Ok(respuesta);
         }
         #endregion
